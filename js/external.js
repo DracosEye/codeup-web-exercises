@@ -9,7 +9,7 @@ alert(`Great, ${fav_color} is my favorite color too!`);
 
 //Movie rentals
 let mermaid = Number.parseInt(prompt("For how many days would you like to rent The Little Mermaid?"));
-let bro_bear = Number.parseInt(prompt("For how many days would youy like to rent Brother Bear?"));
+let bro_bear = Number.parseInt(prompt("For how many days would you like to rent Brother Bear?"));
 let herc = Number.parseInt(prompt("For how many days would you like to rent Hercules?"));
 
 let total_days = mermaid + bro_bear + herc;
@@ -19,7 +19,7 @@ alert(`Renting these movies will cost you $${price}.`);
 //Contractor Earnings
 let fb_hours = Number.parseInt(prompt("How many hours would you like to work for Facebook?"));
 let az_hours = Number.parseInt(prompt("How many hours would you like to work for Amazon?"));
-let gl_hours = Number.parseInt(prompt("How many hours would you liek to work for Google?"));
+let gl_hours = Number.parseInt(prompt("How many hours would you like to work for Google?"));
 
 let total_earnings = 350 * fb_hours + 380 * az_hours + 400 * gl_hours;
 alert(`Hard work pays off! You have earned $${total_earnings}!`);
