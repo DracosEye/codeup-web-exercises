@@ -6,7 +6,7 @@ function showMultiplicationTable(base) {
 
 function randomOddOrEven() {
     for (let i = 0; i < 10; i++) {
-        let num = Math.floor(Math.random() * 181 + 20);
+        let num = Math.floor(Math.random() * 181) + 20;
         if (num % 2 === 0) {
             console.log(`${num} is even`);
         } else {
@@ -27,4 +27,8 @@ function printFiveMults() {
     }
 }
 
+// showMultiplicationTable(7);
+// randomOddOrEven();
+// repeatingNumbers();
+// printFiveMults();
 // printFiveMults();
