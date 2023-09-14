@@ -15,4 +15,10 @@ function randomOddOrEven() {
     }
 }
 
-randomOddOrEven();
+function repeatingNumbers() {
+    for (let i = 1; i < 10; i++) {
+        console.log(i.toString().repeat(i))
+    }
+}
+
+repeatingNumbers();
