@@ -21,5 +21,5 @@ function sellIceCream() {
     console.log("Yay! I sold them all!")
 }
 
-// sellIceCream();
-// powersOfTwo();
+sellIceCream();
+powersOfTwo();

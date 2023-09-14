@@ -15,4 +15,4 @@ function printOdds() {
     }
 }
 
-// printOdds();
+printOdds();

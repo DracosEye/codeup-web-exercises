@@ -27,8 +27,8 @@ function printFiveMults() {
     }
 }
 
-// showMultiplicationTable(7);
-// randomOddOrEven();
-// repeatingNumbers();
-// printFiveMults();
-// printFiveMults();
+showMultiplicationTable(7);
+randomOddOrEven();
+repeatingNumbers();
+printFiveMults();
+printFiveMults();
