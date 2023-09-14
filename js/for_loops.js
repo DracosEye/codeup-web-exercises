@@ -27,4 +27,4 @@ function printFiveMults() {
     }
 }
 
-printFiveMults();
+// printFiveMults();
