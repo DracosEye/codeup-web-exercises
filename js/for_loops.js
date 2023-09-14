@@ -4,4 +4,15 @@ function showMultiplicationTable(base) {
     }
 }
 
-showMultiplicationTable(4);
+function randomOddOrEven() {
+    for (let i = 0; i < 10; i++) {
+        let num = Math.floor(Math.random() * 181 + 20);
+        if (num % 2 === 0) {
+            console.log(`${num} is even`);
+        } else {
+            console.log(`${num} is odd`);
+        }
+    }
+}
+
+randomOddOrEven();
