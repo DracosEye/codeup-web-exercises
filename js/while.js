@@ -7,7 +7,7 @@ function powersOfTwo() {
 }
 
 function sellIceCream() {
-    let conesRemaining = Math.floor(Math.random() * 50) + 50;
+    let conesRemaining = Math.floor(Math.random() * 51) + 50;
 
     do {
         let conesSelling = Math.floor(Math.random() * 5) + 1;

@@ -31,4 +31,3 @@ showMultiplicationTable(7);
 randomOddOrEven();
 repeatingNumbers();
 printFiveMults();
-printFiveMults();
