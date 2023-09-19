@@ -25,9 +25,9 @@ let person = {
  * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
  */
 person.sayHello = function() {
-    console.log(`Hello from ${person.firstName} ${person.lastName}`);
+    return `Hello from ${this.firstName} ${this.lastName}!`;
 }
-person.sayHello();
+console.log(person.sayHello());
 
 /** TODO:
  * HEB has an offer for the shoppers that buy products amounting to
@@ -50,11 +50,16 @@ let shoppers = [
 ];
 
 shoppers.forEach(function(shopper) {
-    if (shopper.amount <= 200) {
-        console.log(`${shopper.name} pays $${shopper.amount.toFixed(2)}`);
-    } else {
-        console.log(`${shopper.name} pays $${(shopper.amount * 0.88).toFixed(2)}`);
+    let discount = 0;
+    let finalAmount = shopper.amount;
+    if (shopper.amount > 200) {
+        discount = 0.12 * shopper.amount;
+        finalAmount = shopper.amount - discount;
     }
+    console.log(`Name: ${shopper.name}
+        Original amount: $${shopper.amount.toFixed(2)}
+        Discount: $${discount.toFixed(2)}
+        Final Amount: $${finalAmount.toFixed(2)}`);
 });
 
 /** TODO:
