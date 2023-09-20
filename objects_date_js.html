@@ -26,7 +26,12 @@
     // Log your birthday in the format: January 1, 2014 using the JavaScript Date object.
     // See link below for methods needed:
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#Getter
-    console.log('Here is my birthday using JavaScript: ' + jsBirthday.toDateString());
+    let birthdayString = "";
+    birthdayString += months[jsBirthday.getMonth()];
+    birthdayString += ` ${jsBirthday.getDate()}`;
+    birthdayString += `, ${jsBirthday.getFullYear()}`;
+
+    console.log('Here is my birthday using JavaScript: ' + birthdayString);
 </script>
 </body>
 </html>
