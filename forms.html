@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+</head>
+<body>
+    <form method="POST" action="https://request-inspector.glitch.me/">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your email here">
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Your password here">
+        <br><br>
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" rows="10" cols="30" placeholder="Tell us about yourself"></textarea>
+        <br><br>
+        <h4>How did you hear about us?</h4>
+        <label for="billboard">Billboard:</label>
+        <input type="radio" id="billboard" value="billboard" name="info-source">
+        <br>
+        <label for="radio-advert">Radio Advertisement:</label>
+        <input type="radio" id="radio-advert" value="radio-advert" name="info-source">
+        <br>
+        <label for="internet-advert">Internet Advertisement:</label>
+        <input type="radio" id="internet-advert" value="internet-advert" name="info-source">
+        <br>
+        <label for="other">Other:</label>
+        <input type="radio" id="other" name="info-source">
+        <br><br>
+        <h4>What browser are you using?</h4>
+        <label for="browser">Browser:</label>
+        <select id="browser" name="browser">
+            <option value="Chrome">Chrome</option>
+            <option value="Firefox">Firefox</option>
+            <option value="Safari">Safari</option>
+            <option value="Edge">Edge</option>
+            <option value="Other">Other</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit form">
+    </form>
+</body>
+</html>
