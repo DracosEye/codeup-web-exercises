@@ -7,9 +7,9 @@ body, html {
 }
 
 .message {
-    margin: 0.5em 0.5em;
+    margin: 0.5em;
     border-radius: 5px;
-    border: solid gray 1px;
+    border: solid dimgrey 1px;
     padding: 0.5em;
     /*opacity: 0.4;*/
     /*background-blend-mode: hard-light;*/
