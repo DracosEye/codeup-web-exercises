@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto+Slab&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto+Slab&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,700&family=Work+Sans:wght@600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+a:hover {
+    color: blue;
+}
+
+body, ul, a {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    display: inline-block;
+}
+
+.page-wrapper {
+    background-color: #afa8a8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    font-style: unset;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+    font-family: "Work Sans", "sans-serif";
+    padding: 0 0.5em;
+}
+
+section {
+    flex-grow: 1;
+    text-align: center;
+
+}
+
+footer {
+    display: flex;
+}
+
+.logo {
+    font-size: 3em;
+    padding: .2em 0;
+    margin: auto;
+    font-family: "Montserrat", "sans-serif";
+}
+
+section a {
+    text-decoration: none;
+    color: black;
+    margin: auto;
+}
