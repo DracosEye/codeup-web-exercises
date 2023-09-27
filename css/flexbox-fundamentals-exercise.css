@@ -85,8 +85,8 @@ section:nth-of-type(3) {
 
 section:nth-of-type(3) h3 {
     /* enter needed declarations here */
-    margin-right: 100px;
-
+    /*margin-right: 100px;*/
+    flex-grow: 1;
 }
 
 .orange-circle {
