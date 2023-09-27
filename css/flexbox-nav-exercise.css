@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-a:hover {
+li a:hover {
     color: blue;
 }
 
@@ -36,7 +36,7 @@ li a {
     text-decoration: none;
     color: black;
     font-family: "Work Sans", "sans-serif";
-    padding: 0 0.5em;
+    padding: 1.9em 0.5em;
 }
 
 section {
