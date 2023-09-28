@@ -205,12 +205,12 @@
 
 #cancel_btn {
     position: absolute;
-    border-radius: 30px;
-    right: -10px;
-    top: -10px;
+    border-radius: 100%;
+    right: -15px;
+    top: -15px;
     background-color: white;
 }
 
 #cancel_img {
-    padding: 2px 2px 0 2px;
+    padding: 7px 7px 5px 7px;
 }

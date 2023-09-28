@@ -73,4 +73,15 @@ button.btn.btn-login {
     min-width: 250px;
 }
 
+#register-info {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    color: lightgrey;
+    font-weight: bolder;
+}
 
+#register-info a {
+    text-decoration: none;
+}
