@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Login Page with absolute positioning</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/resets.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+    <div class="page-wrapper justify-center align-center">
+        <!-- ADD ABSOLUTE POSITIONED IMAGES HERE -->
+        <img src="images/dots-1.svg" class="bkg_img" id="v_dots">
+        <img src="images/dots-2.svg" class="bkg_img" id="h_dots">
+        <img src="images/footer-wave-bottom.svg" class="bkg_img wave">
+        <img src="images/footer-wave-top.svg" class="bkg_img wave">
+        <img src="images/wavy-lines-1.svg" class="bkg_img" id="h_waves">
+        <img src="images/wavy-lines-2.svg" class="bkg_img" id="v_waves">
+        <div class="container login">
+            <!-- ADD CANCEL BUTTON HERE -->
+            <button id="cancel_btn"><img src="images/times-icon.svg" id="cancel_img"></button>
+            <div class="row">
+                <form class="column gap-20" method="POST">
+                    <h1>Login into Your Account</h1>
+                    <label class="input-group">
+                        <span class="input-label">Email</span>
+                        <input type="email" name="email" placeholder="yourname@company.com" required>
+                    </label>
+                    <div class="d-flex flex-column">
+                        <label class="input-group">
+                            <span class="input-label">Password*</span>
+                            <input type="password" name="password" placeholder="****************" required>
+                        </label>
+                        <div class="d-flex align-center justify-space-between">
+                            <label class="checkbox">
+                                <input type="checkbox" name="remember" checked>
+                                <span class="checkbox-label">Keep me signed in</span>
+                            </label>
+                            <a href="#" class="link">Forgot password?</a>
+                        </div>
+                    </div>
+                    <button type="submit" name="login" class="btn btn-login">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
