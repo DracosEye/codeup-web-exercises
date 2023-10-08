@@ -1,0 +1,31 @@
+.contact-info {
+    margin: 0;
+    padding-left: 5px;
+}
+
+#divider {
+    background-color: olivedrab;
+    height: 5px;
+    margin-top: 20px;
+}
+
+#all-content {
+    text-align: left;
+}
+
+.content-chunk {
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #467ee3;
+    font-weight: bold;
+}
+
+li {
+    text-align: left;
+}
+
+ul {
+    margin-left: 10px;
+}
