@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script>
+    "use strict";
+
+    let keyString = "";
+
+    document.addEventListener("keyup", function(event) {
+        // console.log(event.key)
+        keyString += event.key;
+        if (keyString.includes("ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba")) {
+            document.querySelector("body").style.backgroundImage = 'url("img/contra.jpeg")';
+            let sound = new Audio("sounds/contra-guns.wav");
+            sound.play();
+        }
+    } );
+</script>
+</body>
+</html>
