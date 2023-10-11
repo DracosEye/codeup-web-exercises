@@ -3,13 +3,7 @@
 <html data-cbscriptallow="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <title>DOM: Query and Modify</title>
-    <style><br>      @font-face {<br>          font-family: 'Roboto';<br>          font-style: normal;<br>          font-weight: 400;<br>          src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');<br>          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;<br>      }<br><br>      @font-face {<br>          font-family: 'Roboto-Bold';<br>          font-style: normal;<br>          font-weight: 700;<br>          font-display: swap;<br>          src: local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2) format('woff2');<br>          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;<br>      }<br> </style>
-    <style>
-        .font-18 {
-            font-size: 18px;
-        }
-    </style>
-    <link href="./dom-query-js_files/engineV3.css" rel="stylesheet"></head>
+    <style><br>      @font-face {<br>          font-family: 'Roboto';<br>          font-style: normal;<br>          font-weight: 400;<br>          src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');<br>          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;<br>      }<br><br>      @font-face {<br>          font-family: 'Roboto-Bold';<br>          font-style: normal;<br>          font-weight: 700;<br>          font-display: swap;<br>          src: local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2) format('woff2');<br>          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;<br>      }<br> </style> <link href="./dom-query-js_files/engineV3.css" rel="stylesheet"></head>
 <body>
 
 <h1 id="main-header">Hello World!</h1>
@@ -93,7 +87,7 @@
     const pars = document.querySelectorAll("p");
     for (let par of pars) {
         par.addEventListener("dblclick", function() {
-            this.classList.add("font-18");
+            this.style.fontSize = "18px";
         });
     }
 
