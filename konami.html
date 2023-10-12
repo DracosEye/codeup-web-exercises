@@ -14,9 +14,9 @@
     document.addEventListener("keyup", function(event) {
         // console.log(event.key)
         keyString += event.key;
-        if (keyString.includes("ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba")) {
+        if (keyString.includes("ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter")) {
             document.querySelector("body").style.backgroundImage = 'url("img/contra.jpeg")';
-            let sound = new Audio("sounds/contra-guns.wav");
+            let sound = new Audio("sounds/contra-level-finish.mp3");
             sound.play();
         }
     } );
