@@ -16,8 +16,10 @@
         keyString += event.key;
         if (keyString.includes("ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter")) {
             document.querySelector("body").style.backgroundImage = 'url("img/contra.jpeg")';
-            let sound = new Audio("sounds/contra-level-finish.mp3");
-            sound.play();
+            let sound1 = new Audio("sounds/contra-guns.wav");
+            let sound2 = new Audio("sounds/contra-level-finish.mp3");
+            sound1.play();
+            sound2.play();
         }
     } );
 </script>
