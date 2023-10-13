@@ -1,0 +1,236 @@
+
+<!-- saved from url=(0095)chrome-extension://imhhfjfjfhjjjgaedcanngoffjmcblgi/js/pwm/src/pages/iframe/passcardDetail.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <style>
+/* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*{
+  font-family: 'Roboto';
+  /* pointer-events: none; */
+}
+
+#pwm_view_detail {
+  /* min-height: 296px; */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 8px 16px 4px rgba(0, 0, 0, 0.16);
+  border-radius: 8px 8px 8px 8px;
+}
+
+#pwm_detail_content{
+  background: rgba(255, 255, 255, 1);
+  /* min-height: 246px; */
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px 24px 16px;
+  border-radius: 0px 0px 8px 8px;
+}
+
+#pwm_displayname {
+  display: flex;
+  padding: 12px;
+  height: 32px;
+  gap: 16px;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+#pwm_displayname-text {
+  font-size: 20px;
+  line-height: 23.44px;
+  font-family: 'Roboto';
+  font-weight: 700;
+}
+
+#pwm_username-content {
+  font-family: 'Roboto';
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+#pwm_username-title {
+  font-size: 12px;
+  color: #555555;
+}
+
+#pwm_username-value {
+  font-size: 16px;
+  line-height: 18.75px;
+  color: #222;
+  width: 296px;
+}
+
+#pwm_password-list-content {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.pwm_password-content{
+  font-family: 'Roboto';
+  font-weight: 400;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+#pwm_password-title {
+  font-size: 12px;
+  color: #555555;
+}
+
+#pwm_password-vaule {
+  width: 260px;
+}
+
+#pwm_password-vaule input{
+  border: none;
+  outline: none;
+  font-size: 16px;
+  line-height: 18.75px;
+  color: #222;
+  width: 260px;
+  word-wrap: break-word;
+  background: white;
+}
+
+#pwm_password-vaule div{
+  font-size: 16px;
+  line-height: 18.75px;
+  color: #222;
+  width: 260px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+#pwm_password-icon {
+  gap: 4px;
+  display: flex;
+}
+
+#pwm_password-icon icon{
+  gap: 8px;
+  height: 32px;
+  width: 32px;
+}
+
+#pwm_view_detail-toast {
+  z-index: 2147483647;
+  position: absolute;
+  bottom: 24px;
+  left: 120.5px; /* (400 - 159(toast width)) / 2 */
+  font-family: 'Roboto';
+  font-weight: 400;
+}
+
+#pwm_username-copied-toast-text {
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#pwm_password-copied-toast-text {
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+        </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com/"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link href="./css2" rel="stylesheet"></head>
+        
+        
+        
+    <body>
+        <script src="chrome-extension://imhhfjfjfhjjjgaedcanngoffjmcblgi/js/pwm/src/pages/iframeScript/index.js"></script>
+        <div id="pwm_view_detail">
+			<div id="pwm_detail_content">
+				<div id="pwm_displayname">
+					<div id="pwm_displayname-text"></div>
+				</div>
+				<div id="pwm_username-content">
+					<div id="pwm_username-text">
+						<div id="pwm_username-title">
+						</div>
+						<div id="pwm_username-value">
+							test@email.com
+						</div>
+					</div>
+					<icon id="pwm_username-copy">
+						<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14 8H21C22.1046 8 23 8.89543 23 10V19C23 20.1046 22.1046 21 21 21H20V22C20 23.1046 19.1046 24 18 24H11C9.89543 24 9 23.1046 9 22V13C9 11.8954 9.89543 11 11 11H12V10C12 8.89543 12.8954 8 14 8ZM13 11H18C19.1046 11 20 11.8954 20 13V20H21C21.5523 20 22 19.5523 22 19V10C22 9.44772 21.5523 9 21 9H14C13.4477 9 13 9.44771 13 10V11ZM10 13C10 12.4477 10.4477 12 11 12H18C18.5523 12 19 12.4477 19 13V22C19 22.5523 18.5523 23 18 23H11C10.4477 23 10 22.5523 10 22V13Z" fill="#222222"></path>
+</svg>
+					</icon>
+				</div>
+        <div id="pwm_password-list-content">
+        </div>
+			</div>
+      <div id="pwm_view_detail-toast">
+        <div id="pwm_username-copied-toast" display="none"> 
+          <div id="pwm_username-copied-toast-text">
+          </div>
+        </div>
+        <div id="pwm_password-copied-toast" display="none"> 
+          <div id="pwm_password-copied-toast-text">
+          </div>
+        </div>
+      </div>
+    
+</div></body></html>
