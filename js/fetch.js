@@ -10,7 +10,7 @@ const ghOptions = {
 
 function getLastCommitDate(username) {
 
-    let myPromise = fetch("https://api.github.com/users/" + username + "/events/public", ghOptions)
+    return fetch("https://api.github.com/users/" + username + "/events/public", ghOptions)
         .then(response => response.json())
         .then(function(data) {
             for (let event of data) {
@@ -19,5 +19,6 @@ function getLastCommitDate(username) {
                 }
             }
         });
-    return myPromise;
 }
+
+console.log(getLastCommitDate(("DracosEye")));
