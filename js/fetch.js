@@ -21,4 +21,4 @@ function getLastCommitDate(username) {
         });
 }
 
-console.log(getLastCommitDate(("DracosEye")));
+console.log(getLastCommitDate("DracosEye"));
