@@ -16,5 +16,13 @@
     "sugar"
   ],
   "date": "February 14, 2015"
+}, {
+  "title": "Some Other Post",
+  "date": "October 23, 2023",
+  "content": "Just a blurb about stuff and things and how they're all just things that we stuff into our daily lives with no regard to the stuff that goes on when we're stuffing our views full of other things but these things exist so we should acknowledge that!",
+  "categories": [
+    "stuff",
+    "things"
+  ]
 }
 ]
