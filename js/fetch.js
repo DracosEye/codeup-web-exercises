@@ -22,3 +22,15 @@ function getLastCommitDate(username) {
 }
 
 console.log(getLastCommitDate("DracosEye"));
+
+// Asynchronous function -- will execute one line after the other, each waits for the previous line before executing
+// Must mark function async if you use await (they just go together)
+async function getUsersLastCommitDate(username) {
+    console.log("1");
+    const response = await fetch("https://api.github.com/users/" + username + "/events/public", ghOptions);
+    console.log("2");
+    const data = await response.json()
+    console.log("3");
+    console.log(data);
+    console.log("4");
+}
