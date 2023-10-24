@@ -9,9 +9,12 @@
     <link rel="stylesheet" href="css/weather-map.css">
 </head>
 <body>
-    <label for="forecast-city">Weather forecast for: </label>
-    <input type="text" id="forecast-city" placeholder="San Antonio, TX">
-    <button type="submit" id="forecast-btn">Update Forecast</button>
+    <div class="container align-content-center border" id="intro">
+        <h1>Your six-day Weather Forecast</h1>
+        <label for="forecast-city">Weather forecast for: </label>
+        <input type="text" id="forecast-city" placeholder="San Antonio, TX">
+        <button type="submit" class="btn btn-primary" id="forecast-btn">Update Forecast</button>
+    </div>
     <div id="forecast" class="container d-flex"></div>
     <div id="map"></div>
 

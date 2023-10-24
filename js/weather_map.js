@@ -14,10 +14,6 @@ let descriptions, icons, humidities, windSpeeds, windDirs, pressures;
 let starting_lat = 29.426825118534886;
 let starting_long = -98.48948239256946;
 
-function updateMarker() {
-
-}
-
 // For forecast weather
 function updateForecast(weather_lat, weather_long) {
     // Get rid of forecasts for previous location
@@ -33,7 +29,6 @@ function updateForecast(weather_lat, weather_long) {
         `&units=imperial`)
         .then(data => data.json())
         .then(forecast => {
-            console.log(forecast);
             forecast.list.forEach((weather, index) => {
                 curDayForecasts.push(weather);
                 if (index === forecast.list.length - 1 || dateFromTimeStamp(weather.dt) !== dateFromTimeStamp(forecast.list[index + 1].dt)) {
@@ -87,6 +82,11 @@ function updateForecast(weather_lat, weather_long) {
 function updateMap(newPos) {
     map.setCenter(newPos);
     updateForecast(newPos.lat, newPos.lng);
+    reverseGeocode(newPos, MAPBOX_API_KEY)
+        .then(results => {
+            textField.value = results;
+            console.log(results);
+        });
 }
 
 // Get initial forecast
