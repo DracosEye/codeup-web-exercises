@@ -1,20 +1,12 @@
 "use strict";
 
-// For current weather
-// fetch(`https://api.openweathermap.org/data/2.5/weather?` +
-//     `lat=29.426825118534886&lon=-98.48948239256946` +
-//     `&appid=${OPENWEATHER_API_KEY}&units=imperial` +
-//     `&units=imperial`)
-//     .then( data => data.json())
-//     .then( currentWeather => console.log(currentWeather));
-
 const weatherOutput = document.querySelector("#forecast");
 let curDayForecasts = [];
 let descriptions, icons, humidities, windSpeeds, windDirs, pressures;
-let starting_lat = 29.426825118534886;
-let starting_long = -98.48948239256946;
+const STARTING_LAT = 29.426825118534886;
+const STARTING_LONG = -98.48948239256946;
 
-// For forecast weather
+// Get forecast for a specified location
 function updateForecast(weather_lat, weather_long) {
     // Get rid of forecasts for previous location
     while (weatherOutput.firstChild) {
@@ -32,8 +24,8 @@ function updateForecast(weather_lat, weather_long) {
                 curDayForecasts.push(weather);
                 // Summarize weather for current day if on the last forecast of the day
                 if (index === forecast.list.length - 1 || dateFromTimeStamp(weather.dt) !== dateFromTimeStamp(forecast.list[index + 1].dt)) {
+                    // Create elements of the next forecast container
                     const forecastContainer = document.createElement("div");
-                    // forecastContainer.classList.add("border", "border-dark-subtle", "rounded", "p-2", "d-flex", "flex-column", "align-items-center");
                     const day = document.createElement("p");
                     day.classList.add("fw-bold", "fs-4", "align-self-center");
                     const time = document.createElement("p");
@@ -65,6 +57,7 @@ function updateForecast(weather_lat, weather_long) {
                     humid.innerText = "Humidity: " + average(humidities);
                     wind.innerText = "Wind: " + average(windSpeeds) + " mph " + windCardinalDirection(average(windDirs));
                     pressure.innerText = "Pressure: " + average(pressures) + " mb";
+                    // Populate forecast container for the current day
                     forecastContainer.appendChild(day);
                     forecastContainer.appendChild(time);
                     forecastContainer.appendChild(desc);
@@ -81,6 +74,7 @@ function updateForecast(weather_lat, weather_long) {
         });
 }
 
+// Receives new LngLat object, re-centers map, updates the forecast, and updates the text field with an address
 function updateMap(newPos) {
     map.setCenter(newPos);
     updateForecast(newPos.lat, newPos.lng);
@@ -91,12 +85,13 @@ function updateMap(newPos) {
 }
 
 // Get initial forecast
-updateForecast(starting_lat, starting_long);
+updateForecast(STARTING_LAT, STARTING_LONG);
 
 // Actions for updated city in text field
 const textField = document.querySelector("#forecast-city");
 const forecastButton = document.querySelector("#forecast-btn");
 
+// Event listener for the "Update Forecast button
 forecastButton.addEventListener("click", () => {
     geocode(textField.value, MAPBOX_API_KEY)
         .then(results => {
@@ -112,18 +107,19 @@ const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/streets-v11', // style URL
     zoom: 10, // starting zoom
-    center: [starting_long, starting_lat]
+    center: [STARTING_LONG, STARTING_LAT]
 });
 
 // Place draggable marker on starting city
 const marker = new mapboxgl.Marker({
     draggable: true
-}).setLngLat([starting_long, starting_lat])
+}).setLngLat([STARTING_LONG, STARTING_LAT])
     .addTo(map);
 
+// Move marker to location on map that user double-clicks on
 map.on("dblclick", e => {
     marker.setLngLat(e.lngLat);
-    updateMap(e.lngLat);
+    updateMap(marker.getLngLat());
 });
 
 // Update forecast after marker is dragged
