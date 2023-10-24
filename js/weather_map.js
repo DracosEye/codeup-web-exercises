@@ -92,6 +92,19 @@ function updateMap(newPos) {
 // Get initial forecast
 updateForecast(starting_lat, starting_long);
 
+// Actions for updated city in text field
+const textField = document.querySelector("#forecast-city");
+const forecastButton = document.querySelector("#forecast-btn");
+
+forecastButton.addEventListener("click", () => {
+    geocode(textField.value, MAPBOX_API_KEY)
+        .then(results => {
+            map.setCenter(results);
+            marker.setLngLat([results[0], results[1]]);
+            updateForecast(results[1], results[0]);
+        });
+});
+
 // Display map
 mapboxgl.accessToken = MAPBOX_API_KEY;
 const map = new mapboxgl.Map({
