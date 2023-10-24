@@ -69,7 +69,7 @@ function mostFrequent(array){
 function average(array){
     let total = 0;
     array.forEach((element, index, array)=>total+=element);
-    return total/array.length;
+    return Math.round(total/array.length);
 }
 
 const daysOfWeekAbbreviated = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -77,4 +77,19 @@ const daysOfWeekAbbreviated = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 function dayOfWeekFromDayAbbreviated(timeStamp){
     let dateTime = new Date(timeStamp * 1000);
     return daysOfWeekAbbreviated[dateTime.getDay()];
+}
+
+// Returns minimum and maximum temperature for given array of forecasts
+function getTempString (forecasts) {
+    let min_temp = 1000;
+    let max_temp = -1000;
+    for (let forecast of forecasts) {
+        if (forecast.main.temp_min < min_temp) {
+            min_temp = forecast.main.temp_min;
+        }
+        if (forecast.main.temp_max > max_temp) {
+            max_temp = forecast.main.temp_max;
+        }
+    }
+    return `Temp: ${min_temp} / ${max_temp}`;
 }
