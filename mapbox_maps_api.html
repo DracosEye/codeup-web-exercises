@@ -24,14 +24,39 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
 <!-- Custom JS -->
 <script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script>
     mapboxgl.accessToken = MAPBOX_API_KEY;
+
+    const restaurants = [
+        {name: "Los Barrios", address: "4223 Blanco Rd, San Antonio, TX 78212"},
+        {name: "Texas Roadhouse", address: "23102 W I-10, San Antonio, TX 78257"},
+        {name: "Chick Fil-A", address: "3214 SE Military Dr, San Antonio, TX 78223"} ];
+
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         zoom: 10, // starting zoom
-        center: [-98.4916, 29.4252] // [lng, lat]
+        // center: [restLong, restLat] // [lng, lat]
     });
+
+    for (let restaurant of restaurants) {
+        // Find location of restaurant and center map
+        geocode(restaurant.address, MAPBOX_API_KEY)
+            .then(results => {
+                let restLong = results[0];
+                let restLat = results[1];
+                map.setCenter([restLong, restLat]);
+                // Create marker at restaurant location
+                const marker = new mapboxgl.Marker()
+                    .setLngLat([restLong, restLat])
+                    .addTo(map);
+                const restPopup = new mapboxgl.Popup()
+                    .setHTML(`<p>${restaurant.name}</p>`);
+                marker.setPopup(restPopup);
+            });
+    }
+
 </script>
 </body>
 </html>
