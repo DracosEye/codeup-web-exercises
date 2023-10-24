@@ -91,5 +91,5 @@ function getTempString (forecasts) {
             max_temp = forecast.main.temp_max;
         }
     }
-    return `Temp: ${min_temp} / ${max_temp}`;
+    return `Temp: ${Math.round(min_temp)} / ${Math.round(max_temp)}`;
 }
