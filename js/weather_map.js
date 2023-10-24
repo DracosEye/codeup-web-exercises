@@ -17,11 +17,10 @@ let starting_long = -98.48948239256946;
 // For forecast weather
 function updateForecast(weather_lat, weather_long) {
     // Get rid of forecasts for previous location
-    let prevForecasts = document.querySelectorAll(".forecast-container");
-    for (let prevForecast of prevForecasts) {
-        // prevForecast.innerHTML = "";
-        prevForecast.style.display = "none";
+    while (weatherOutput.firstChild) {
+        weatherOutput.removeChild(weatherOutput.firstChild);
     }
+
     // Get updated forecast
     fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
         `lat=${weather_lat}&lon=${weather_long}` +
@@ -31,9 +30,12 @@ function updateForecast(weather_lat, weather_long) {
         .then(forecast => {
             forecast.list.forEach((weather, index) => {
                 curDayForecasts.push(weather);
+                // Summarize weather for current day if on the last forecast of the day
                 if (index === forecast.list.length - 1 || dateFromTimeStamp(weather.dt) !== dateFromTimeStamp(forecast.list[index + 1].dt)) {
                     const forecastContainer = document.createElement("div");
+                    // forecastContainer.classList.add("border", "border-dark-subtle", "rounded", "p-2", "d-flex", "flex-column", "align-items-center");
                     const day = document.createElement("p");
+                    day.classList.add("fw-bold", "fs-4", "align-self-center");
                     const time = document.createElement("p");
                     const temp = document.createElement("p");
                     const desc = document.createElement("p");
@@ -65,13 +67,13 @@ function updateForecast(weather_lat, weather_long) {
                     pressure.innerText = "Pressure: " + average(pressures) + " mb";
                     forecastContainer.appendChild(day);
                     forecastContainer.appendChild(time);
-                    forecastContainer.appendChild(temp);
                     forecastContainer.appendChild(desc);
                     forecastContainer.appendChild(icon);
+                    forecastContainer.appendChild(temp);
                     forecastContainer.appendChild(wind);
                     forecastContainer.appendChild(humid);
                     forecastContainer.appendChild(pressure);
-                    forecastContainer.classList.add("forecast-container");
+                    forecastContainer.classList.add("forecast-container", "border", "border-dark-subtle", "rounded", "p-2", "d-flex", "flex-column", "align-items-center");
                     weatherOutput.appendChild(forecastContainer);
                     curDayForecasts = [];
                 }
@@ -85,7 +87,6 @@ function updateMap(newPos) {
     reverseGeocode(newPos, MAPBOX_API_KEY)
         .then(results => {
             textField.value = results;
-            console.log(results);
         });
 }
 
