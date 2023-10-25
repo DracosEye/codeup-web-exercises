@@ -44,6 +44,7 @@ function updateForecast(weather_lat, weather_long) {
                     windSpeeds = [];
                     windDirs = [];
                     pressures = [];
+                    // Get info for each three-hour increment
                     for (let cast of curDayForecasts) {
                         descriptions.push(cast.weather[0].description);
                         icons.push(cast.weather[0].icon);
@@ -52,6 +53,7 @@ function updateForecast(weather_lat, weather_long) {
                         windDirs.push(cast.wind.deg);
                         pressures.push(cast.main.pressure);
                     }
+                    // Summarize info for given day
                     desc.innerText = mostFrequent(descriptions);
                     icon.srcset = `http://openweathermap.org/img/w/${mostFrequent(icons)}.png`;
                     humid.innerText = "Humidity: " + average(humidities);
@@ -116,7 +118,7 @@ const marker = new mapboxgl.Marker({
 }).setLngLat([STARTING_LONG, STARTING_LAT])
     .addTo(map);
 
-// Move marker to location on map that user double-clicks on
+// Move marker to location on map that user clicks on
 map.on("click", e => {
     marker.setLngLat(e.lngLat);
     updateMap(marker.getLngLat());
