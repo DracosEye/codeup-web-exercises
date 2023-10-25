@@ -117,7 +117,7 @@ const marker = new mapboxgl.Marker({
     .addTo(map);
 
 // Move marker to location on map that user double-clicks on
-map.on("dblclick", e => {
+map.on("click", e => {
     marker.setLngLat(e.lngLat);
     updateMap(marker.getLngLat());
 });
