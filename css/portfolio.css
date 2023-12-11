@@ -1,0 +1,16 @@
+.intro {
+    text-align: center;
+}
+
+h1 {
+    text-decoration: underline;
+}
+
+h3 {
+    margin: 0 20px;
+}
+
+#link-container {
+    padding: 10px 50px;
+    margin-top: 30px;
+}
