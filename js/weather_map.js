@@ -55,7 +55,7 @@ function updateForecast(weather_lat, weather_long) {
                     }
                     // Summarize info for given day
                     desc.innerText = mostFrequent(descriptions);
-                    icon.srcset = `http://openweathermap.org/img/w/${mostFrequent(icons)}.png`;
+                    icon.srcset = `https://openweathermap.org/img/w/${mostFrequent(icons)}.png`;
                     humid.innerText = "Humidity: " + average(humidities);
                     wind.innerText = "Wind: " + average(windSpeeds) + " mph " + windCardinalDirection(average(windDirs));
                     pressure.innerText = "Pressure: " + average(pressures) + " mb";
